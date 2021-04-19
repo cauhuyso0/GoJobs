@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_color">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:background="@drawable/header_sign_up_in_frag">
+
+        <Button
+            android:id="@+id/btn_back_register_freelancer"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/ic_back_white"
+            android:layout_margin="@dimen/_20sdp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_70sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_up"
+                android:textSize="@dimen/_25ssp"
+                android:textStyle="bold"
+                android:paddingLeft="@dimen/_30sdp"
+                android:textColor="#f000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="@string/sign_in_for_freelancer"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/edt_register_email_freelancer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_35sdp"
+        android:textColor="#787878"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_35sdp"
+        android:background="@drawable/rounded_edt"
+        android:elevation="@dimen/_2sdp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email"
+        android:textSize="@dimen/_13sdp"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="@dimen/_10sdp"
+        android:paddingLeft="@dimen/_20sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"/>
+
+    <EditText
+        android:id="@+id/edt_register_password_freelancer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_35sdp"
+        android:textColor="#787878"
+        android:inputType="textPassword"
+        android:textSize="@dimen/_13sdp"
+        android:background="@drawable/rounded_edt"
+        android:drawableLeft="@drawable/ic_key"
+        android:drawablePadding="@dimen/_10sdp"
+        android:elevation="@dimen/_2sdp"
+        android:hint="@string/password"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingLeft="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_10ssp"
+        android:layout_marginLeft="@dimen/_10sdp">
+        <CheckBox
+            android:id="@+id/cb_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_30sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tôi chấp nhận"
+            android:textColor="#000000"
+            android:textSize="@dimen/_13sdp"
+            />
+
+        <TextView
+            android:id="@+id/tv_term_service_freelancer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="Điều khoản dịch vụ"
+            android:textStyle="bold"
+            android:textColor="#2196F3"
+            android:textSize="@dimen/_13sdp"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_continue_register_freelancer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_35sdp"
+        android:background="@drawable/rounded_btn_signup"
+        android:drawableRight="@drawable/ic_forward_white"
+        android:text="@string/conti"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_14ssp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:text="@string/terms_of_service"
+        android:textSize="@dimen/_12ssp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_13sdp"
+            android:text="@string/answer_login"/>
+
+        <TextView
+            android:id="@+id/tv_login_register_freelancer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="@string/sign_in"
+            android:textStyle="bold"
+            android:textColor="#FF9800"
+            android:textSize="@dimen/_13sdp"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</LinearLayout>

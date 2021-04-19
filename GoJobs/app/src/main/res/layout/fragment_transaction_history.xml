@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_history_transaction_fragment"
+    tools:context=".Fragment.TransactionHistoryFragment"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_splash" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_transaction_history"
+        android:layout_below="@id/img_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Lịch sủ giao dịch ở đây"
+        android:gravity="center"
+        tools:listitem="@layout/transaction_history_item"
+        android:textSize="@dimen/_20sdp"/>
+
+</RelativeLayout>

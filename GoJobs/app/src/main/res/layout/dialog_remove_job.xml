@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:background="@drawable/background_white_radius">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông báo"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/white"
+        android:padding="@dimen/_10sdp"
+        android:gravity="center"
+        android:background="@drawable/background_cyan_radius"/>
+
+    <TextView
+        android:id="@+id/dialogResetPass_tvNotify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Bạn có chắc muốn xóa công việc này?"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp">
+        <TextView
+            android:id="@+id/dialogResetPass_tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hủy"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_15sdp"/>
+        <TextView
+            android:id="@+id/dialogResetPass_tvConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_14ssp"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_15sdp"/>
+    </LinearLayout>
+</LinearLayout>

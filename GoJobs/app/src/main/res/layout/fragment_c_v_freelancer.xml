@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:id="@+id/ln_cv_freelancer_fragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_avatar_freelancer"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/avatar_logo" />
+
+            <TextView
+                android:id="@+id/tv_lien_he_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Liên hệ"
+                android:textAlignment="textEnd"
+                android:paddingRight="@dimen/_40sdp"
+                android:textColor="#FF9800"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên"
+                android:textColor="#FF9800"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edt_name_freelancer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8DB3AFAF"
+                android:hint="Xuân"
+                android:enabled="false"
+                android:textColor="#787878"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="Email"
+                android:textColor="#FF9800"
+                android:textSize="@dimen/_12sdp" />
+
+            <EditText
+                android:id="@+id/edt_email_freelancer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8DB3AFAF"
+                android:hint="abc@gmail.com"
+                android:enabled="false"
+                android:inputType="textEmailAddress"
+                android:textColor="#787878"  />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="SĐT"
+                android:textColor="#FF9800"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edt_sdt_freelancer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8DB3AFAF"
+                android:hint="0765782026"
+                android:maxLength="11"
+                android:enabled="false"
+                android:inputType="phone"
+                android:textColor="#787878" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="Học Vấn"
+                android:textColor="#FF9800"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edt_hoc_van_freelancer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8DB3AFAF"
+                android:hint="kĩ sư"
+                android:enabled="false"
+                android:textColor="#787878" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="Nghề nghiệp"
+                android:textColor="#FF9800"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edt_nghe_nghiep_freelancer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8DB3AFAF"
+                android:hint="Lập trình viên"
+                android:enabled="false"
+                android:textColor="#787878" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="Trình độ ngoại ngữ"
+                android:textColor="#FF9800"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edt_trinh_do_ngoai_ngu_freelancer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8DB3AFAF"
+                android:hint="Tiếng anh"
+                android:enabled="false"
+                android:textColor="#787878" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="Giới tính"
+                android:textColor="#FF9800"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edt_gioi_tinh_CV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8DB3AFAF"
+                android:hint="Nam"
+                android:enabled="false"
+                android:textColor="#787878" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="Ngày sinh"
+                android:textColor="#FF9800"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edt_ngay_sinh_CV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8DB3AFAF"
+                android:hint="01-01-2000"
+                android:enabled="false"
+                android:textColor="#787878" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="Địa chỉ"
+                android:textColor="#FF9800"
+                android:textSize="@dimen/_12ssp" />
+
+            <EditText
+                android:id="@+id/edt_dia_chi_freelancer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8DB3AFAF"
+                android:hint="Quận Hai, TP Vũng Tàu"
+                android:enabled="false"
+                android:textColor="#787878" />
+
+            <TextView
+                android:id="@+id/tv_luu_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:layout_marginLeft="@dimen/_40sdp"
+                android:layout_marginRight="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="Lưu CV"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:background="@drawable/rounded_btn_signup"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

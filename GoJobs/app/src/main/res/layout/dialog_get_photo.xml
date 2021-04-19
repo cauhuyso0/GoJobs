@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_300sdp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingBottom="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/shape_rectangle_corner_white"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/dialogGetPhoto_tvTakePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_take_photo"
+            android:textColor="#FF9800"
+            android:paddingTop="@dimen/_13sdp"
+            android:paddingBottom="@dimen/_13sdp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="@dimen/_16ssp"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/whiteThree"/>
+
+        <TextView
+            android:id="@+id/dialogGetPhoto_tvChooseLibrary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_13sdp"
+            android:paddingBottom="@dimen/_13sdp"
+            android:textSize="@dimen/_16ssp"
+            android:text="@string/title_choose_from_library"
+            android:background="?attr/selectableItemBackground"
+            android:textColor="#FF9800"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialogGetPhoto_tvCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_13sdp"
+        android:paddingTop="@dimen/_13sdp"
+        android:background="@drawable/selector_rectangle_corner_white"
+        android:text="@string/cancel"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="#FF9800"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+</LinearLayout>

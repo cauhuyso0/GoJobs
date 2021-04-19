@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "624278548440",
+    "project_id": "gojobs-7d2ee",
+    "storage_bucket": "gojobs-7d2ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624278548440:android:344616aaaa0b8524cdccad",
+        "android_client_info": {
+          "package_name": "vn.com.gojobs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624278548440-pf7j3a37cnoeateasfgmem2v88kklkji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuD25y7khqCu1QzaUi3unYgplnUwTVGJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624278548440-pf7j3a37cnoeateasfgmem2v88kklkji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Employer.ListContractJobFragment"
+    android:background="@color/white"
+    android:id="@+id/rl_list_contract_fragment"
+    >
+
+   <TextView
+       android:id="@+id/tv_title"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:text="Danh sách contract"
+      android:layout_alignParentTop="true"
+       android:textSize="@dimen/_15sdp"
+       android:layout_margin="@dimen/_10sdp"
+       android:textColor="@color/colorAccent"
+      />
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_below="@id/tv_title"
+       android:id="@+id/rvAllContract"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       tools:listitem="@layout/contract_item"
+       />
+
+</RelativeLayout>

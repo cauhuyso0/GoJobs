@@ -1,0 +1,105 @@
+<div class="card img-fluid" style="max-width:100%; height: auto">
+    <img class="card-img-top" src="image/pkl2.jpg" alt="Card image" style="opacity:0.5">
+    <div class="card-img-overlay">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                {{!-- <h6 class="m-0 font-weight-bold text-primary">Tất cả sách</h6> --}}
+                <h3><a href="/web/freelancer">Freelancers</a>
+                    <!-- Topbar Search -->
+                    <form action="/web/freelancer" method="GET"
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search float-right">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small"
+                                placeholder="Search by email/name" aria-label="Search" aria-describedby="basic-addon2"
+                                name="search">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </h3>
+
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>_id</th>
+                                <th>Name</th>
+                                <th><a href="/web/freelancer?sort=asc">Email</a></th>
+                                <th>Phone No</th>
+                                <th>Wallet _id</th>
+                                <th>Wallet balance</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each freelancerList}}
+                            <tr>
+                                <td>{{_id}}</td>
+                                <td>{{flcName}}</td>
+                                <td>{{flcEmail}}</td>
+                                <td>{{flcPhone}}</td>
+                                <td>{{wallet.[0]._id}}</td>
+                                <td>{{wallet.[0].balance}}</td>
+                                <td>
+                                    &nbsp; &nbsp;&nbsp; &nbsp;
+                                    <a
+                                        href="/web/updateFlcWallet?flcId={{_id}}&flcEmail={{flcEmail}}&walletId={{wallet.[0]._id}}"><i
+                                            class="fas fa-pen" aria-hidden="true"></i></a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination float-right">
+
+                            {{#if sort }}
+                            {{#if search}}
+                            {{#forInRange 1 pageCount 1}}
+                            <li class="page-item"><a class="page-link"
+                                    href="/web/freelancer?pageNumber={{this}}&sort={{../sort}}&search={{../search}}">{{this}}</a>
+                            </li>
+                            {{/forInRange}}
+                            {{else}}
+                            {{#forInRange 1 pageCount 1}}
+                            <li class="page-item"><a class="page-link"
+                                    href="/web/freelancer?pageNumber={{this}}&sort={{../sort}}&search={{../search}}">{{this}}</a>
+                            </li>
+                            {{/forInRange}}
+                            {{/if}}
+                            {{/if}}
+
+                            {{#if search }}
+                            {{#ifCond sort "==" undefined}}
+                            {{#forInRange 1 pageCount 1}}
+                            <li class="page-item"><a class="page-link"
+                                    href="/web/freelancer?pageNumber={{this}}&search={{../search}}">{{this}}</a>
+                            </li>
+                            {{/forInRange}}
+                            {{/ifCond}}
+                            {{/if}}
+
+                            {{#ifCond search "==" undefined }}
+                            {{#ifCond sort "==" undefined}}
+                            {{#forInRange 1 pageCount 1}}
+                            <li class="page-item"><a class="page-link"
+                                    href="/web/freelancer?pageNumber={{this}}">{{this}}</a>
+                            </li>
+                            {{/forInRange}}
+                            {{/ifCond}}
+                            {{/ifCond}}
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

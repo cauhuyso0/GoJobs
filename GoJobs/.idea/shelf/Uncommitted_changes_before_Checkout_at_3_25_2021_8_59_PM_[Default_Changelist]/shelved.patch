@@ -1,0 +1,63 @@
+Index: app/src/main/java/vn/com/gojobs/Fragment/AddJobFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package vn.com.gojobs.Fragment;\r\n\r\nimport android.os.Bundle;\r\n\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.fragment.app.FragmentManager;\r\n\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.Button;\r\nimport android.widget.Toast;\r\nimport android.widget.ArrayAdapter;\r\nimport android.widget.Spinner;\r\n\r\nimport retrofit2.Call;\r\nimport retrofit2.Callback;\r\nimport retrofit2.Response;\r\nimport vn.com.gojobs.Employer.EmployerManagerJobFragment;\r\nimport vn.com.gojobs.R;\r\nimport vn.com.gojobs.RetrofitClient;\r\nimport vn.com.gojobs.interfake.API;\r\n\r\nimport static vn.com.gojobs.AuthActivity.empId;\r\nimport static vn.com.gojobs.Employer.LoginEmployerFragment._id;\r\n\r\npublic class AddJobFragment extends Fragment {\r\n\r\n    public static final String TAG = \"AddJobFragment\";\r\n    RetrofitClient retrofitClient = new RetrofitClient();\r\n    FragmentManager fragmentManager;\r\n    Button btnAddJob;\r\n    String endEmpId;\r\n\r\n    private Spinner spLoaiCV, spNganhNghe, spQuan, spTP;\r\n\r\n    private String[] loaiCV = {\"Theo giờ\", \"Theo ngày\"};\r\n    private String[] nganhNghe = {\"Kĩ sư phần mền\", \"Thiết kế đồ họa\", \"Lao động phổ thông\", \"Phụ bếp, nhà hàng - khách sạn\",\r\n            \"Hướng dẫn viên du lịch\", \"Tiếp thị\", \"Nhân viên BĐS\",\r\n            \"Giúp việc\", \"Giữ trẻ\", \"Chăm sóc thú cưng\", \"Dạy kèm\", \"Phụ quán\"};\r\n    private String[] districts = {\"Quận 1\", \"Quận 2\", \"Thủ Đức\", \"Bình Tân\", \"Bình Dương\"};\r\n    private String[] province = {\"Huế\", \"TP HCM\", \"Nha Trang\", \"BR-VT\", \"Phú Yên\"};\r\n\r\n    public AddJobFragment() {\r\n        // Required empty public constructor\r\n    }\r\n\r\n    @Override\r\n    public void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n\r\n    }\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        // Inflate the layout for this fragment\r\n        View view = inflater.inflate(R.layout.fragment_add_job, container, false);\r\n\r\n        if (_id != null){\r\n            endEmpId = _id;\r\n        }else {\r\n            endEmpId =empId;\r\n        }\r\n        System.out.println(\"endEmpId \" + _id +\" \" + empId);\r\n        btnAddJob = view.findViewById(R.id.btn_job_add);\r\n        btnAddJob.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                addJob();\r\n            }\r\n        });\r\n        return view;\r\n    }\r\n    void addJob (){\r\n\r\n        API api = retrofitClient.getClien().create(API.class);\r\n        api.createNewJob(endEmpId,\r\n                \"app test api\",\r\n                \"app tets api\",\r\n                400000,\r\n                \"api test api\",\r\n                false,\r\n                \"test api\",\r\n                \"01/02/2002\",\r\n                \"03/02/2002\",\r\n                1,\r\n                \"tets\",\r\n                4000000,\r\n                3,\r\n                \"Quan 3\").enqueue(new Callback<Void>() {\r\n            @Override\r\n            public void onResponse(Call<Void> call, Response<Void> response) {\r\n                if (response.code() == 200){\r\n                    Toast.makeText(getActivity(), \"Tạo công việc mới thành công\", Toast.LENGTH_SHORT).show();\r\n                    fragmentManager = getFragmentManager();\r\n                    ListJobFragment listJobFragment = new ListJobFragment();\r\n                    fragmentManager.beginTransaction().replace(R.id.frag_employer_manager_job, listJobFragment).addToBackStack(EmployerManagerJobFragment.TAG).commit();\r\n                } else {\r\n                    Toast.makeText(getActivity(), \"Tạo công việc mới thất bại\", Toast.LENGTH_SHORT).show();\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(Call<Void> call, Throwable t) {\r\n                Toast.makeText(getActivity(), \"Error\", Toast.LENGTH_SHORT).show();\r\n            }\r\n        });\r\n=======\r\n        spLoaiCV = view.findViewById(R.id.spinner_loai_cong_viec);\r\n        spNganhNghe = view.findViewById(R.id.spn_nganh_nghe);\r\n        spQuan = view.findViewById(R.id.sp_Quan);\r\n        spTP = view.findViewById(R.id.sp_TP);\r\n\r\n        //dummy data\r\n        ArrayAdapter aa = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, loaiCV);\r\n        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);\r\n        //Setting the ArrayAdapter data on the Spinner\r\n        spLoaiCV.setAdapter(aa);\r\n\r\n        ArrayAdapter dd = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, nganhNghe);\r\n        dd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);\r\n        //Setting the ArrayAdapter data on the Spinner\r\n        spNganhNghe.setAdapter(dd);\r\n\r\n        ArrayAdapter bb = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, districts);\r\n        bb.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);\r\n        //Setting the ArrayAdapter data on the Spinner\r\n        spQuan.setAdapter(bb);\r\n\r\n        ArrayAdapter cc = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, province);\r\n        cc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);\r\n        //Setting the ArrayAdapter data on the Spinner\r\n        spTP.setAdapter(cc);\r\n        return view;\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/vn/com/gojobs/Fragment/AddJobFragment.java	(revision 6e3168fd353cd59d672632328ace29e0d4151963)
++++ app/src/main/java/vn/com/gojobs/Fragment/AddJobFragment.java	(date 1616680786613)
+@@ -70,9 +70,36 @@
+                 addJob();
+             }
+         });
++        spLoaiCV = view.findViewById(R.id.spinner_loai_cong_viec);
++        spNganhNghe = view.findViewById(R.id.spn_nganh_nghe);
++        spQuan = view.findViewById(R.id.sp_Quan);
++        spTP = view.findViewById(R.id.sp_TP);
++
++        //dummy data
++        ArrayAdapter aa = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, loaiCV);
++        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
++        //Setting the ArrayAdapter data on the Spinner
++        spLoaiCV.setAdapter(aa);
++
++        ArrayAdapter dd = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, nganhNghe);
++        dd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
++        //Setting the ArrayAdapter data on the Spinner
++        spNganhNghe.setAdapter(dd);
++
++        ArrayAdapter bb = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, districts);
++        bb.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
++        //Setting the ArrayAdapter data on the Spinner
++        spQuan.setAdapter(bb);
++
++        ArrayAdapter cc = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, province);
++        cc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
++        //Setting the ArrayAdapter data on the Spinner
++        spTP.setAdapter(cc);
+         return view;
++
+     }
+-    void addJob (){
++
++    void addJob() {
+ 
+         API api = retrofitClient.getClien().create(API.class);
+         api.createNewJob(endEmpId,
+@@ -91,7 +118,7 @@
+                 "Quan 3").enqueue(new Callback<Void>() {
+             @Override
+             public void onResponse(Call<Void> call, Response<Void> response) {
+-                if (response.code() == 200){
++                if (response.code() == 200) {
+                     Toast.makeText(getActivity(), "Tạo công việc mới thành công", Toast.LENGTH_SHORT).show();
+                     fragmentManager = getFragmentManager();
+                     ListJobFragment listJobFragment = new ListJobFragment();
+@@ -135,4 +162,4 @@
+         return view;
+ 
+     }
+-}
+\ No newline at end of file
++}
